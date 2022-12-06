@@ -24,7 +24,9 @@ public class DB {
     private MongoDatabase dataBase;
 
     public DB () {
-        this.mongoClient = new MongoClient("localhost",27017);
+        MongoClientURI uri = new MongoClientURI("mongo --ssl --host docdb-2022-12-06-21-01-00.cluster-ciyul1wnwlfq.us-east-1.docdb.amazonaws.com:27017 --sslCAFile rds-combined-ca-bundle.pem --username sahil --password sahil123\n");
+//        this.mongoClient = new MongoClient("localhost",27017);
+        this.mongoClient = new MongoClient(uri);
 
         this.dataBase =  mongoClient.getDatabase("workload");
     }

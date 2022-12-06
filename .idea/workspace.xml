@@ -194,7 +194,7 @@
       <workItem from="1666895921686" duration="927000" />
       <workItem from="1666896999231" duration="56000" />
       <workItem from="1670328696021" duration="2069000" />
-      <workItem from="1670335164863" duration="6421000" />
+      <workItem from="1670335164863" duration="7553000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1666895777773</created>
@@ -223,36 +223,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/workload/service/DataService.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/workload/service/DataService.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/workload/service/DataService.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/workload/service/DataService.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/workload/service/DataService.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
