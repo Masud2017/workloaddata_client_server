@@ -9,13 +9,15 @@ import org.slf4j.LoggerFactory;
 import org.workload.thriftGeneratedClasses.ClientRFDService;
 import org.workload.thriftGeneratedClasses.ClientRFDServiceImpl;
 
+import java.net.InetSocketAddress;
+
 public class BinaryServer implements Runnable {
     private Logger logger = LoggerFactory.getLogger(BinaryServer.class);
     @Override
     public void run() {
         TServerSocket socket = null;
         try {
-            socket = new TServerSocket(4445);
+            socket = new TServerSocket(new InetSocketAddress("3.80.36.12",4445));
         } catch (TTransportException e) {
             throw new RuntimeException(e);
         }

@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.workload.worker.WorkloadWorker;
 
 import java.io.*;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class Listener {
         this.port = port;
         this.socket = new ServerSocket(this.port);
 //        this.socket.bind(new InetSocketAddress("192.168.0.6",this.port));
+        this.socket.bind(new InetSocketAddress("3.80.36.12",this.port));
         this.executorService = new ThreadPoolExecutor(10,20,5,TimeUnit.MINUTES,this.queue);
         this.completableFutureList = new ArrayList<>();
     }
