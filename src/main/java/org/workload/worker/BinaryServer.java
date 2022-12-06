@@ -17,7 +17,7 @@ public class BinaryServer implements Runnable {
     public void run() {
         TServerSocket socket = null;
         try {
-            socket = new TServerSocket(new InetSocketAddress("3.80.36.12",4445));
+            socket = new TServerSocket(4445);
         } catch (TTransportException e) {
             throw new RuntimeException(e);
         }

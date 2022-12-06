@@ -26,7 +26,6 @@ public class Listener {
         this.port = port;
         this.socket = new ServerSocket(this.port);
 //        this.socket.bind(new InetSocketAddress("192.168.0.6",this.port));
-        this.socket.bind(new InetSocketAddress("3.80.36.12",this.port));
         this.executorService = new ThreadPoolExecutor(10,20,5,TimeUnit.MINUTES,this.queue);
         this.completableFutureList = new ArrayList<>();
     }
