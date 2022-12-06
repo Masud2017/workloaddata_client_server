@@ -24,6 +24,7 @@ public class BinaryServer implements Runnable {
         TSimpleServer server = new TSimpleServer(new TServer.Args(socket)
                 .processor(new ClientRFDService.Processor<>(new ClientRFDServiceImpl())));
         this.logger.info("Starting the rpc server at port 4445");
+        System.out.println("Starting the rpc server at port 4445");
         server.serve();
         this.logger.info("Ending the rpc server .. ");
     }

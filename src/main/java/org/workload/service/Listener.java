@@ -36,6 +36,7 @@ public class Listener {
             while (true) {
 
                 this.logger.info("Listening to the port : " + this.port);
+                System.out.println("Listening to the port : " + this.port);
                 Socket newSock = this.socket.accept();
 
 //                RecieverWorker recieverWorker = new RecieverWorker(newSock);
