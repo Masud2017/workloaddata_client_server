@@ -34,7 +34,7 @@ public class MathUtils {
 
         for (Document item : data) {
 //            convertAbleList.add(Double.valueOf((String) item.get("_id")));
-            convertAbleList.add(Double.valueOf((Double) item.get("_id")));
+            convertAbleList.add(Double.valueOf((Integer) item.get("_id")));
         }
 
         return Stats.of(convertAbleList).populationStandardDeviation();
