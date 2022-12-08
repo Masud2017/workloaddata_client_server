@@ -141,7 +141,7 @@ this.logger.info("batch id ; "+clientRFW.getBatchId());
     protected List<Double> convertDocumentListToDoubleList(List<Document> converteAbleList) {
         List<Double> convertedList = new ArrayList<>();
         for (Document item : converteAbleList) {
-            convertedList.add(Double.valueOf((Integer)item.get("_id")));
+            convertedList.add(Double.valueOf((Double)item.get("_id")));
         }
         return convertedList;
     }
