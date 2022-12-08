@@ -19,7 +19,8 @@ public class MathUtils {
         List<Double> convertAbleList = new ArrayList<>();
 
         for (Document item : data) {
-            convertAbleList.add(Double.valueOf((String) item.get("_id")));
+//            convertAbleList.add(Double.valueOf((String) item.get("_id")));
+            convertAbleList.add((Double)item.get("_id"));
         }
         Double sum = Double.valueOf(0);
         for (double item : convertAbleList) {
@@ -32,7 +33,8 @@ public class MathUtils {
         List<Double> convertAbleList = new ArrayList<>();
 
         for (Document item : data) {
-            convertAbleList.add(Double.valueOf((String) item.get("_id")));
+//            convertAbleList.add(Double.valueOf((String) item.get("_id")));
+            convertAbleList.add(Double.valueOf((Double) item.get("_id")));
         }
 
         return Stats.of(convertAbleList).populationStandardDeviation();
@@ -41,7 +43,8 @@ public class MathUtils {
         List<Double> convertAbleList = new ArrayList<>();
 
         for (Document item : data) {
-            convertAbleList.add(Double.valueOf((String) item.get("_id")));
+//            convertAbleList.add(Double.valueOf((String) item.get("_id")));
+            convertAbleList.add(Double.valueOf((Double) item.get("_id")));
         }
 
         return Stats.of(convertAbleList).max();
@@ -50,7 +53,8 @@ public class MathUtils {
         List<Double> convertAbleList = new ArrayList<>();
 
         for (Document item : data) {
-            convertAbleList.add(Double.valueOf((String) item.get("_id")));
+//            convertAbleList.add(Double.valueOf((String) item.get("_id")));
+            convertAbleList.add(Double.valueOf((Double) item.get("_id")));
         }
 
         return Stats.of(convertAbleList).min();
@@ -64,7 +68,8 @@ public class MathUtils {
             }
             logger.info("item"+item.get("_id"));
 
-            convertAbleList.add(Double.valueOf((String) item.get("_id")));
+//            convertAbleList.add(Double.valueOf((String) item.get("_id"))); // possible issue
+            convertAbleList.add(Double.valueOf((Double) item.get("_id"))); // possible issue
         }
 
         String[] splitedPercentile = nthPercentile.split("p");
