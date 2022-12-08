@@ -17,16 +17,29 @@ import java.util.List;
 
 @SuppressWarnings("LOCAL_VARIABLE")
 public class DB {
-//    private String uri = "mongodb://127.0.0.1:27017/?maxPoolSize=20&w=majority";
+    String template = "mongodb://%s:%s@%s/workload?ssl=true&replicaSet=rs0&readpreference=%s";
+    String username = "sahil";
+    String password = "sahil123";
+    String clusterEndpoint = "docdb-2022-12-06-21-01-00.cluster-ciyul1wnwlfq.us-east-1.docdb.amazonaws.com:27017";
+    String readPreference = "secondaryPreferred";
+    String connectionString = String.format(template, username, password, clusterEndpoint, readPreference); // temporary change
+
+    MongoClientURI clientURI = new MongoClientURI(connectionString);
+    //    private String uri = "mongodb://127.0.0.1:27017/?maxPoolSize=20&w=majority";
     private Logger logger = LoggerFactory.getLogger(DB.class);
 
-    private MongoClient mongoClient;
+    private com.mongodb.client.MongoClient mongoClient;
     private MongoDatabase dataBase;
 
+
     public DB () {
-        MongoClientURI uri = new MongoClientURI("mongo --ssl --host docdb-2022-12-06-21-01-00.cluster-ciyul1wnwlfq.us-east-1.docdb.amazonaws.com:27017 --sslCAFile rds-combined-ca-bundle.pem --username sahil --password sahil123\n");
+        System.setProperty("javax.net.ssl.trustStore", "/tmp/certs/rds-truststore.jks");
+        System.setProperty("javax.net.ssl.trustStorePassword", "sahil123");
+
 //        this.mongoClient = new MongoClient("localhost",27017);
-        this.mongoClient = new MongoClient(uri);
+//        this.mongoClient = new MongoClient(uri);
+        this.mongoClient =  MongoClients.create(connectionString);
+
 
         this.dataBase =  mongoClient.getDatabase("workload");
     }
@@ -48,9 +61,9 @@ public class DB {
         return this.dataBase;
     }
 
-    public MongoClient getMongoClient () {
-        return this.mongoClient;
-    }
+//    public MongoClient getMongoClient () {
+//        return this.mongoClient;
+//    }
 
     public List<Document> getLimitedDataFromNDBenchTest(Integer limit,String unit) {
         BasicDBObject group = new BasicDBObject();
