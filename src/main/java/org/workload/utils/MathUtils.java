@@ -19,8 +19,8 @@ public class MathUtils {
         List<Double> convertAbleList = new ArrayList<>();
 
         for (Document item : data) {
-//            convertAbleList.add(Double.valueOf((String) item.get("_id")));
-            convertAbleList.add((Double)item.get("_id"));
+            convertAbleList.add(Double.valueOf((Double) item.get("_id")));
+//            convertAbleList.add((Double)item.get("_id"));
         }
         Double sum = Double.valueOf(0);
         for (double item : convertAbleList) {
@@ -34,7 +34,7 @@ public class MathUtils {
 
         for (Document item : data) {
 //            convertAbleList.add(Double.valueOf((String) item.get("_id")));
-            convertAbleList.add(Double.valueOf((Integer) item.get("_id")));
+            convertAbleList.add(Double.valueOf((Double) item.get("_id")));
         }
 
         return Stats.of(convertAbleList).populationStandardDeviation();
